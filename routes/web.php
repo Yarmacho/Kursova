@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('main', function () {
-    return view('mainPage', ['page'=>'main']);
+    $comments = \App\Models\Comment::all();
+
+    return view('mainPage', ['page'=>'main', 'comments'=>$comments]);
 });
 
 Route::get('menu', function()
@@ -25,4 +27,9 @@ Route::get('menu', function()
     $drinks = Drink::all();
 
     return view('menu', ['page'=>'menu', 'pizzas'=>$pizzas, 'drinks'=>$drinks]);
+});
+
+Route::get('constructor', function()
+{
+   return view('constructor', ['page'=>'ctor']);
 });

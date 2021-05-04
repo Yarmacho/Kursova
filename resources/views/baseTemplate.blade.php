@@ -97,13 +97,43 @@
             <div class="second_footer_column">
                 <ul>
                     <div class="footer_nav_first_col">
-                        <li>Головна</li>
-                        <li>Меню</li>
-                        <li>Конструктор піци</li>
+                        <li>
+                            @if($page === 'main')
+                                <strong>Головна</strong>
+                            @else
+                                <a href="main">Головна</a>
+                            @endif
+                        </li>
+                        <li>
+                            @if($page === 'menu')
+                                <strong>Меню</strong>
+                            @else
+                                <a href="menu">Меню</a>
+                            @endif
+                        </li>
+                        <li>
+                            @if($page === 'ctor')
+                                <strong>Конструктор піци</strong>
+                            @else
+                                <a href="constructor">Конструктор піци</a>
+                            @endif
+                        </li>
                     </div>
                     <div class="footer_nav_second_col">
-                        <li>Про нас</li>
-                        <li>Доставка та оплата</li>
+                        <li>
+                            @if($page === 'about')
+                                <strong>Про нас</strong>
+                            @else
+                                <a href="about_us">Про нас</a>
+                            @endif
+                        </li>
+                        <li>
+                            @if($page === 'delivery')
+                                <strong>Доставка та оплата</strong>
+                            @else
+                                <a href="delivery">Доставка та оплата</a>
+                            @endif
+                        </li>
                     </div>
                     <div class="footer_nav_third_col">
                         <li>Київ</li>

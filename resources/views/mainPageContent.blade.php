@@ -11,7 +11,7 @@
         <div class="pizzas">
             @component('Components/pizza')
                 @slot('img')
-                    ../resources/img/pizzas/karbonara.svg
+                    karbonara.svg
                 @endslot
                 @slot('name')
                     Карбонара
@@ -23,7 +23,7 @@
 
             @component('Components/pizza')
                 @slot('img')
-                    ../resources/img/pizzas/4cheese.svg
+                    4cheese.svg
                 @endslot
                 @slot('name')
                     4 сири
@@ -34,7 +34,7 @@
             @endcomponent
             @component('Components/pizza')
                 @slot('img')
-                    ../resources/img/pizzas/chikenMushrooms.svg
+                    chikenMushrooms.svg
                 @endslot
                 @slot('name')
                     З куркою та грибами
@@ -85,34 +85,16 @@
         <h2>Відгуки</h2>
 
         <div class="comment_clouds">
-            @component('Components.comment')
-                @slot('img')
-                    ../resources/img/usr1.svg
-                @endslot
-                @slot('comment')
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales porttitor risus ac venenatis.
-                        Mauris eget rutrum augue.
-                @endslot
-            @endcomponent
-            @component('Components.comment')
-                @slot('img')
-                    ../resources/img/usr2.svg
-                @endslot
-                @slot('comment')
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales porttitor risus ac venenatis.
-                        Mauris eget rutrum augue.
-                @endslot
-            @endcomponent
-            @component('Components.comment')
-                @slot('img')
-                    ../resources/img/usr3.svg
-                @endslot
-                @slot('comment')
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales porttitor risus ac venenatis.
-                        Mauris eget rutrum augue.
-                @endslot
-            @endcomponent
-
+            @foreach($comments as $comment)
+                @component('Components.comment')
+                    @slot('img')
+                        {{$comment['user_image']}}
+                    @endslot
+                    @slot('comment')
+                        {{$comment['comment']}}
+                    @endslot
+                @endcomponent
+            @endforeach
         </div>
     </div>
 

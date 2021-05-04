@@ -1,5 +1,5 @@
 <div class="comment">
-    <img src="{{$img}}" alt="" class="user_img">
+    <img src="../resources/img/{{$img}}" alt="user" class="user_img">
     <div class="user_comment">
         {{$comment}}
     </div>
