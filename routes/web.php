@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Comment;
+use App\Models\Order;
 use App\Models\Pizza;
 use \App\Models\Drink;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,19 @@ Route::get('constructor', function()
 
 Route::get('cart', function()
 {
-    return view('cart', ['page'=>'cart']);
+    $orders = Order::Retrieve(1);
+    foreach ($orders as $order)
+    {
+        if ($order->pizzaId)
+        {
+            $order->img = 'pizzas/'.Pizza::find($order->pizzaId)['image_title'];
+        }
+        else
+        {
+            $order->img = 'drinks/'.Drink::find($order->drinkId)['image_title'];
+        }
+    }
+
+    return view('cart', ['page'=>'cart', 'order_list'=>$orders]);
 });
 

@@ -28,8 +28,33 @@
                 <div class="user_cart">
                     <p id="users_order">Ваше замовлення:</p>
 
-
-
+                    @foreach($order_list as $item)
+                        @component('Components.orderItem')
+                            @slot('name')
+                                @if($item->pizzaName)
+                                    {{$item->pizzaName}}
+                                @else
+                                    {{$item->drinkName}}
+                                @endif
+                            @endslot
+                            @slot('price')
+                                @if($item->pizzaPrice)
+                                    {{$item->pizzaPrice}}
+                                @else
+                                    {{$item->drinkPrice}}
+                                @endif
+                            @endslot
+                            @slot('count')
+                                {{$item->count}}
+                            @endslot
+                            @slot('ingredients')
+                                ghbasdasd
+                            @endslot
+                            @slot('img')
+                                {{$item->img}}
+                            @endslot
+                        @endcomponent
+                    @endforeach
                     <p id="total">Всього: 555 грн</p>
                 </div>
             </div>
