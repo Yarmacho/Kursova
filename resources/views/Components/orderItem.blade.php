@@ -1,5 +1,5 @@
 <div class="order_item">
-    <div class="order_item_image" style = "background: url('../resources/img/{{$img}}'); background-size: contain;">
+    <div class="order_item_image" style = "background: url('../resources/img/{{$img}}') no-repeat; background-size: contain;">
     </div>
 
     <div class="order_item_description">

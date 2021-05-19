@@ -53,3 +53,5 @@ Route::get('cart', function()
     return view('cart', ['page'=>'cart', 'order_list'=>$orders]);
 });
 
+Route::get('about_us', function() { return view('about', ['page'=>'about']); });
+

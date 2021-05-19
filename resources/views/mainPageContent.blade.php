@@ -11,7 +11,7 @@
         <div class="pizzas">
             @component('Components/pizza')
                 @slot('img')
-                    karbonara.svg
+                    karbonara.png
                 @endslot
                 @slot('name')
                     Карбонара
@@ -23,7 +23,7 @@
 
             @component('Components/pizza')
                 @slot('img')
-                    4cheese.svg
+                    4cheese.png
                 @endslot
                 @slot('name')
                     4 сири
@@ -34,7 +34,7 @@
             @endcomponent
             @component('Components/pizza')
                 @slot('img')
-                    chikenMushrooms.svg
+                    chikenMushrooms.png
                 @endslot
                 @slot('name')
                     З куркою та грибами
